@@ -25,15 +25,13 @@ public class TempConversion {
     }
 
     public static double convertK2F(double kelvin) {
-        return convertK2C(convertC2F(kelvin));
+        return convertC2F(convertK2C(kelvin));
     }
 
     public static double getTemp(String unit) {
         System.out.printf("%-40s : ", String.format("Please enter °%s temperature to convert", unit));
         return Double.parseDouble(input.nextLine());
     }
-
-
 
     public static String getUnitChoice() {
         System.out.printf("%-4s : %40s%n", "C).", "To convert a °C temperature");
