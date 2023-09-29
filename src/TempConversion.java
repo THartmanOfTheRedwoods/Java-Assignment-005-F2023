@@ -58,7 +58,7 @@ public class TempConversion {
                     switch (TempConversion.getUnitChoice()) {
 
                         case "C":
-                            System.out.println(TempConversion.convertF2C(tempVal));
+                            System.out.println("Result " + tempVal + "°F is " + TempConversion.convertF2C(tempVal) +"°C");
                             break;
 
                         case "K":
