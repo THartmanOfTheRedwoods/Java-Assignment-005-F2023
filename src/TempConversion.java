@@ -16,11 +16,16 @@ public class TempConversion {
     }
 
     public static double convertF2K(double fahrenheit) {
+
         return convertC2K(convertF2C(fahrenheit));
     }
 
     public static double convertK2C(double kelvin) {
         return kelvin - 273.15;
+    }
+
+    public static double convertK2F(double kelvin) {
+        return convertC2F(convertK2C(kelvin));
     }
 
     public static double getTemp(String unit) {
