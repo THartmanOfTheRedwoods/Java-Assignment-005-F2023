@@ -42,53 +42,58 @@ public class TempConversion {
     }
 
     public static void main(String[] args) {
+
         while(true) {
 
-            String fromUnit;
-            String toUnit;
-            double fromTemp;
-            double toTemp;
+            System.out.println("here we go");
 
-            switch (fromUnit) {
+            switch (TempConversion.getUnitChoice()) {
 
                 case "F":
-                    switch (toUnit) {
+                    switch (TempConversion.getUnitChoice()) {
 
                         case "C":
-                            toTemp = TempConversion.convertF2C(fromTemp);
+                            System.out.println("FC");
+                            //TempConversion.convertF2C();
                             break;
 
                         case "K":
-                            toTemp = TempConversion.convertF2K(fromTemp);
+                            System.out.println("FK");
+                            //TempConversion.convertF2K(fromTemp);
                             break;
                     }
-                    break;
+                break;
 
                 case "C":
-                    switch (toUnit) {
+                    switch (TempConversion.getUnitChoice()) {
 
                         case "F":
-                            toTemp = TempConversion.convertC2F(fromTemp);
+                            System.out.println("CF");
+                            //TempConversion.convertC2F();
                             break;
 
                         case "K":
-                            toTemp = TempConversion.convertC2K(fromTemp);
+                            System.out.println("CK");
+                            //TempConversion.convertC2K();
                             break;
                     }
-                    break;
+                break;
 
                 case "K":
-                    switch (toUnit) {
+                    switch (TempConversion.getUnitChoice()) {
 
                         case "C":
-                            toTemp = TempConversion.convertK2C(fromTemp);
+                            System.out.println("KC");
+                            //TempConversion.convertK2C();
 
                             break;
                         case "F":
-                            toTemp = TempConversion.convertK2F(fromTemp);
+                            System.out.println("KF");
+                            //TempConversion.convertK2F();
                             break;
                     }
-                    break;
+                break;
+
             }
         }
     }
