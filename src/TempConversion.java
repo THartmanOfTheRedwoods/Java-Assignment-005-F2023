@@ -62,43 +62,42 @@ public class TempConversion {
 
                         case "C":
                             System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertF2C(tempVal), toUnit);
-                            //System.out.println("Result " + tempVal + "°F is " + TempConversion.convertF2C(tempVal) +"°C");
                             break;
 
                         case "K":
-                            System.out.println(TempConversion.convertF2K(tempVal));
+                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertF2K(tempVal), toUnit);
                             break;
                     }
                 break;
 
                 case "C":
+                    tempVal = TempConversion.getTemp(fromUnit);
+                    toUnit = TempConversion.getUnitChoice();
 
-                    tempVal = TempConversion.getTemp("C");
-
-                    switch (TempConversion.getUnitChoice()) {
+                    switch (toUnit) {
 
                         case "F":
-                            System.out.println(TempConversion.convertC2F(tempVal));
+                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertC2F(tempVal), toUnit);
                             break;
 
                         case "K":
-                            System.out.println(TempConversion.convertC2K(tempVal));
+                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertC2K(tempVal), toUnit);
                             break;
                     }
                 break;
 
                 case "K":
+                    tempVal = TempConversion.getTemp(fromUnit);
+                    toUnit = TempConversion.getUnitChoice();
 
-                    tempVal = TempConversion.getTemp("K");
-
-                    switch (TempConversion.getUnitChoice()) {
+                    switch (toUnit) {
 
                         case "C":
-                            System.out.println(TempConversion.convertK2C(tempVal));
+                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertK2C(tempVal), toUnit);
 
                             break;
                         case "F":
-                            System.out.println(TempConversion.convertK2F(tempVal));
+                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertK2F(tempVal), toUnit);
                             break;
                     }
                 break;
