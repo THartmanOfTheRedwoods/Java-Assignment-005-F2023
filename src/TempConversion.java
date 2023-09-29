@@ -48,17 +48,21 @@ public class TempConversion {
         while(true) {
 
             double tempVal;
+            String outputTemplate = "Result %.6f°%s is %.6f°%s%n";
+            String fromUnit = TempConversion.getUnitChoice();
+            String toUnit;
 
-            switch (TempConversion.getUnitChoice()) {
+            switch (fromUnit) {
 
                 case "F":
+                    tempVal = TempConversion.getTemp(fromUnit);
+                    toUnit = TempConversion.getUnitChoice();
 
-                    tempVal = TempConversion.getTemp("F");
-
-                    switch (TempConversion.getUnitChoice()) {
+                    switch (toUnit) {
 
                         case "C":
-                            System.out.println("Result " + tempVal + "°F is " + TempConversion.convertF2C(tempVal) +"°C");
+                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertF2C(tempVal), toUnit);
+                            //System.out.println("Result " + tempVal + "°F is " + TempConversion.convertF2C(tempVal) +"°C");
                             break;
 
                         case "K":
