@@ -43,18 +43,23 @@ public class TempConversion {
 
     public static void main(String[] args) {
 
+
+
         while(true) {
 
+            double tempVal;
             System.out.println("here we go");
 
             switch (TempConversion.getUnitChoice()) {
 
                 case "F":
+
+                    tempVal = TempConversion.getTemp("F");
+
                     switch (TempConversion.getUnitChoice()) {
 
                         case "C":
-                            System.out.println("FC");
-                            //TempConversion.convertF2C();
+                            System.out.println(TempConversion.convertF2C(tempVal));
                             break;
 
                         case "K":
@@ -65,6 +70,9 @@ public class TempConversion {
                 break;
 
                 case "C":
+
+                    tempVal = TempConversion.getTemp("C");
+
                     switch (TempConversion.getUnitChoice()) {
 
                         case "F":
@@ -80,6 +88,9 @@ public class TempConversion {
                 break;
 
                 case "K":
+
+                    tempVal = TempConversion.getTemp("K");
+
                     switch (TempConversion.getUnitChoice()) {
 
                         case "C":
