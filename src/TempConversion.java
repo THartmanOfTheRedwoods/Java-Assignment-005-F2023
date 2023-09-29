@@ -44,6 +44,52 @@ public class TempConversion {
     public static void main(String[] args) {
         while(true) {
 
+            String fromUnit;
+            String toUnit;
+            double fromTemp;
+            double toTemp;
+
+            switch (fromUnit) {
+
+                case "F":
+                    switch (toUnit) {
+
+                        case "C":
+                            toTemp = TempConversion.convertF2C(fromTemp);
+                            break;
+
+                        case "K":
+                            toTemp = TempConversion.convertF2K(fromTemp);
+                            break;
+                    }
+                    break;
+
+                case "C":
+                    switch (toUnit) {
+
+                        case "F":
+                            toTemp = TempConversion.convertC2F(fromTemp);
+                            break;
+
+                        case "K":
+                            toTemp = TempConversion.convertC2K(fromTemp);
+                            break;
+                    }
+                    break;
+
+                case "K":
+                    switch (toUnit) {
+
+                        case "C":
+                            toTemp = TempConversion.convertK2C(fromTemp);
+
+                            break;
+                        case "F":
+                            toTemp = TempConversion.convertK2F(fromTemp);
+                            break;
+                    }
+                    break;
+            }
         }
     }
 }
