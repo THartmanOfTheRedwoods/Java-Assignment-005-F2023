@@ -47,10 +47,17 @@ public class TempConversion {
 
         while(true) {
 
-            double tempVal;
-            String outputTemplate = "Result %.6f°%s is %.6f°%s%n";
-            String fromUnit = TempConversion.getUnitChoice();
+            String resultTemplate = "Result %.6f°%s is %.6f°%s%n";
             String toUnit;
+            String fromUnit;
+            double tempVal;
+
+            fromUnit = TempConversion.getUnitChoice();
+
+            if (fromUnit.equalsIgnoreCase("Q")) {
+                System.out.println("Goodbye");
+                break;
+            }
 
             switch (fromUnit) {
 
@@ -58,14 +65,19 @@ public class TempConversion {
                     tempVal = TempConversion.getTemp(fromUnit);
                     toUnit = TempConversion.getUnitChoice();
 
+                    if (toUnit.equalsIgnoreCase("Q")) {
+                        fromUnit = toUnit;
+                        break;
+                    }
+
                     switch (toUnit) {
 
                         case "C":
-                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertF2C(tempVal), toUnit);
+                            System.out.printf(resultTemplate, tempVal, fromUnit, TempConversion.convertF2C(tempVal), toUnit);
                             break;
 
                         case "K":
-                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertF2K(tempVal), toUnit);
+                            System.out.printf(resultTemplate, tempVal, fromUnit, TempConversion.convertF2K(tempVal), toUnit);
                             break;
                     }
                 break;
@@ -74,14 +86,19 @@ public class TempConversion {
                     tempVal = TempConversion.getTemp(fromUnit);
                     toUnit = TempConversion.getUnitChoice();
 
+                    if (toUnit.equalsIgnoreCase("Q")) {
+                        fromUnit = toUnit;
+                        break;
+                    }
+
                     switch (toUnit) {
 
                         case "F":
-                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertC2F(tempVal), toUnit);
+                            System.out.printf(resultTemplate, tempVal, fromUnit, TempConversion.convertC2F(tempVal), toUnit);
                             break;
 
                         case "K":
-                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertC2K(tempVal), toUnit);
+                            System.out.printf(resultTemplate, tempVal, fromUnit, TempConversion.convertC2K(tempVal), toUnit);
                             break;
                     }
                 break;
@@ -90,18 +107,30 @@ public class TempConversion {
                     tempVal = TempConversion.getTemp(fromUnit);
                     toUnit = TempConversion.getUnitChoice();
 
+                    if (toUnit.equalsIgnoreCase("Q")) {
+                        fromUnit = toUnit;
+                        break;
+                    }
+
                     switch (toUnit) {
 
                         case "C":
-                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertK2C(tempVal), toUnit);
+                            System.out.printf(resultTemplate, tempVal, fromUnit, TempConversion.convertK2C(tempVal), toUnit);
 
                             break;
                         case "F":
-                            System.out.printf(outputTemplate, tempVal, fromUnit, TempConversion.convertK2F(tempVal), toUnit);
+                            System.out.printf(resultTemplate, tempVal, fromUnit, TempConversion.convertK2F(tempVal), toUnit);
                             break;
                     }
+                    
                 break;
 
+
+            }
+
+            if (fromUnit.equalsIgnoreCase("Q")) {
+                System.out.println("Goodbye");
+                break;
             }
         }
     }
