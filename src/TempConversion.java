@@ -23,6 +23,12 @@ public class TempConversion {
         return kelvin - 273.15;
     }
 
+    public static double convertK2F(double kelvin) { double celsius = convertK2C(kelvin);
+        return convertC2F(celsius);
+    }
+
+
+
     public static double getTemp(String unit) {
         System.out.printf("%-40s : ", String.format("Please enter °%s temperature to convert", unit));
         return Double.parseDouble(input.nextLine());
@@ -38,7 +44,32 @@ public class TempConversion {
 
     public static void main(String[] args) {
         while(true) {
+                    System.out.println("Please choose a temperature unit to convert from:");
+                    String fromUnit = getUnitChoice();
+                    if (fromUnit.equalsIgnoreCase("Q")) {
+                        System.out.println("Thank you for using this program. Goodbye!");
+                        break;
+                    }
+                    System.out.println("Please choose a temperature unit to convert to:");
+                    String toUnit = getUnitChoice();
+                    if (toUnit.equalsIgnoreCase("Q")) {
+                        System.out.println("Thank you for using this program. Goodbye!");
+                        break;
+                    }
+                    double temp = getTemp(fromUnit);
+                    double result = 0.0;
+                    switch (fromUnit + toUnit) {
+                        case "CF" -> result = convertC2F(temp);
+                        case "CK" -> result = convertC2K(temp);
+                        case "FC" -> result = convertF2C(temp);
+                        case "FK" -> result = convertF2K(temp);
+                        case "KC" -> result = convertK2C(temp);
+                        case "KF" -> result = convertK2F(temp);
+                        default -> System.out.println("Invalid choice. Please try again.");
+                    }
+                    System.out.printf("Result %.6f°C is %.6f°F%n", temp, result);
+                }
+            }
+
 
         }
-    }
-}

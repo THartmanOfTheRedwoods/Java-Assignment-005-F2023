@@ -7,17 +7,42 @@ As a new Java developer, you will be required to familiarize yourself with exist
     * Variables
 * Using Java terminology, break down every piece of the method **convertF2K**.
     * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+* 
+* The access modifier is public
+* 
+  * Is it a class or object method, how do you know?
+  * It is a class method because it is declared with the keyword static.
+  * 
+  * What is its return type?
+*It's return type is double
+* 
+  * What parameters does it require, and what are the parameter(s) datatype(s)?
+  * It requires fahrenheit of type double
+  * 
+  * Describe for me how the body of the method executes (i.e. its flow of execution).
+  * The body method calls convertf2c with the parameter fahrenheit and assigns the result to a local variable named celsius.
+  * it calls the method convertc2k with the parameter celsius and returns the result as the output of the method.
+  * 
 * Using Java terminology, break down method **getUnitChoice**.
     * What is the access modifier?
+    * public
+    * 
     * Is it a class or object method, how do you know?
+    * It is a class method because it is declared with the keyword static.
+    * 
     * What is its return type?
+    * Its return type is string
+    * 
     * What parameters does it require, and what are the parameter(s) datatype(s)?
+    * It does not require and parameter.
+    * 
     * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * It prints four lines of text to the standard output, each containing an option for the user to choose from C,F,K, or Q. Each option is followed by a colon and a description of wht it does.
+    * It returns the next line of input from the user as the output of the method, using the variable input that is declared as a static final Scanner object at the beginning of the class.
+    * 
     * How do the format specifiers differ than what you've seen before and what do they do?
+    * The format specifiers differ from what I have seen before in that they use a minus sign (-) before the number.
+    * It indicates left alignment
 
 ## Part 2: - Implement Missing Method: convertK2F
 This Part is aimed at teaching you to use methods and code you have to add new functionality to existing code. In this case you will add the missing conversion method, but you don't need to know math :-)
