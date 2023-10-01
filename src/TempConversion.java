@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class TempConversion {
     static final Scanner input = new Scanner(System.in);
+    public static double convertK2F(double kelvin) { double celsius = convertK2C(kelvin);
+    return convertC2F(celsius);
+    }
 
     public static double convertC2F(double celsius) {
         return (celsius * (9.0/5)) + 32.0;
@@ -38,7 +41,48 @@ public class TempConversion {
 
     public static void main(String[] args) {
         while(true) {
+            System.out.println("Choose the temperature unit to convert FROM:");
+            String fromUnit = getUnitChoice();
 
+            if (fromUnit.equalsIgnoreCase("Q")) {
+                break;
+            }
+
+            System.out.println("Choose the temperature unit to convert TO:");
+            String toUnit = getUnitChoice();
+
+            if (toUnit.equalsIgnoreCase("Q")) {
+                break;
+            }
+
+            double temperature = getTemp(fromUnit);
+            double convertedTemperature = 0.0;
+
+            switch (fromUnit.toUpperCase() + toUnit.toUpperCase()) {
+                case "CF":
+                    convertedTemperature = convertC2F(temperature);
+                    break;
+                case "CK":
+                    convertedTemperature = convertC2K(temperature);
+                    break;
+                case "FC":
+                    convertedTemperature = convertF2C(temperature);
+                    break;
+                case "FK":
+                    convertedTemperature = convertF2K(temperature);
+                    break;
+                case "KC":
+                    convertedTemperature = convertK2C(temperature);
+                    break;
+                case "KF":
+                    convertedTemperature = convertK2F(temperature);
+                    break;
+                default:
+                    System.out.println("Invalid temperature units selected.");
+                    break;
+            }
+
+            System.out.printf("%.2f °%s is equal to %.2f °%s%n", temperature, fromUnit, convertedTemperature, toUnit);
         }
     }
 }
