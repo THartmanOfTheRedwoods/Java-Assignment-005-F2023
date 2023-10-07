@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class TempConversion {
-    static double fahrenheit;
-    static double celsius;
-    static double kelvin;
+    double fahrenheit;
+    double celsius;
+    double kelvin;
     static final Scanner input = new Scanner(System.in);
 
     public static double convertC2F(double celsius) {
@@ -59,46 +59,35 @@ public class TempConversion {
 * temperature". They differ because we've only used decimal specifiers that limit the amount of spaces or digits the int
 * or double value will print to the console. Then return the input scanned before the enter keystroke.*/
     public static void main(String[] args) {
-        getUnitChoice();
-        String unit = input.nextLine();
-        String celsius = "C";
-        String fahrenheit = "F";
-        String kelvin = "K";
-        while(true) {
-            switch(celsius) {
-                case "F": getTemp(unit);
-                    Double cF = Double.parseDouble(input.nextLine());
-                    Double cK = convertC2F(cF);
-                    System.out.printf("Result: %.6d : %.6d", cF, cK);
+        boolean shouldContinue = true;
+        while(shouldContinue) {
+            String unit = getUnitChoice();
+            switch (unit) {
+                case "c": double temp = getTemp(unit);
+                double cF = convertC2F(temp);
+                double cK = convertC2K(temp);
+                    System.out.printf("Result: %6f°C is %6f°F and %6f°K", temp, cF, cK);
                     break;
-                case "K": getTemp(unit);
-                    Double celK = Double.parseDouble(input.nextLine());
-                    Double celF = convertK2C(celK);
-                    System.out.printf("Result: %.6d : %.6d", celK, celF);
+                case "k": double temp1 = getTemp(unit);
+                    double kF = convertK2F(temp1);
+                    double kC = convertK2C(temp1);
+                    System.out.printf("Result: %6f°K is %6f°F and %6f°C", temp1, kF, kC);
                     break;
-            }switch(fahrenheit){
-                case "C": getTemp(unit);
-                Double fC = Double.parseDouble(input.nextLine());
-                Double farC = convertF2C(fC);
-                    System.out.printf("Result: %.6d : %.6d", fC, farC);
+                case "f": double temp2 = getTemp(unit);
+                    double fC = convertF2C(temp2);
+                    double fK = convertF2K(temp2);
+                    System.out.printf("Result: %6f°F is %6f°C and %6f°K", temp2, fC, fK);
                     break;
-                case "K": getTemp(unit);
-                Double fK = Double.parseDouble(input.nextLine());
-                Double farK = convertF2K(fK);
-                    System.out.printf("Result: %.6d : %.6d", fK, farK);
+                case "q":
+                    System.out.println("Quitting program");
                     break;
-            }switch(kelvin) {
-                case "F": getTemp(unit);
-                Double kF = Double.parseDouble(input.nextLine());
-                Double kelF = convertK2F(kF);
-                    System.out.printf("Result: %.6d : %.6d", kF, kelF);
+                default:
+                    System.out.println("Incorrect input detected");
                     break;
-                case "C": getTemp(unit);
-                Double kC = Double.parseDouble(input.nextLine());
-                Double kelC = convertK2C(kC);
-                    System.out.printf("Result: %.6d : %.6d", kC, kelC);
-                    break;
+            }shouldContinue = false;
+            System.out.printf("%nExiting program....");
+
             }
+
             }
         }
-    }
