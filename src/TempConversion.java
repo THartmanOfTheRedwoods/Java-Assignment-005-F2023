@@ -41,7 +41,7 @@ public class TempConversion {
 
     public static String requestInput(String message) {
         System.out.println(message+ "(Q to quit)");
-        String value = input.nextLine();
+        String value = input.nextLine().toUpperCase();
         if(value.toUpperCase().equals("Q")) {
             System.exit(0);
         }
@@ -67,23 +67,23 @@ public class TempConversion {
                     break;
                 case "FK":
                     result = convertF2K(value);
-                    System.out.println(value);
+                    System.out.println(result);
                     break;
                 case "CF":
                     result = convertC2F(value);
-                    System.out.println(value);
+                    System.out.println(result);
                     break;
                 case "CK":
                     result = convertC2K(value);
-                    System.out.println(value);
+                    System.out.println(result);
                     break;
                 case "KF":
                     result = convertK2F(value);
-                    System.out.println(value);
+                    System.out.println(result);
                     break;
                 case "KC":
                     result = convertK2C(value);
-                    System.out.println(value);
+                    System.out.println(result);
                     break;
                 default:
                     System.out.println("no match");
