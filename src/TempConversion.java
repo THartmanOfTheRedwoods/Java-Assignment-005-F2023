@@ -23,6 +23,9 @@ public class TempConversion {
         return kelvin - 273.15;
     }
 
+    public static double convertK2F(double kelvin) {return convertC2F(convertK2C(kelvin));
+    }
+
     public static double getTemp(String unit) {
         System.out.printf("%-40s : ", String.format("Please enter °%s temperature to convert", unit));
         return Double.parseDouble(input.nextLine());
@@ -36,9 +39,58 @@ public class TempConversion {
         return input.nextLine();
     }
 
+    public static String requestInput(String message) {
+        System.out.println(message+ "(Q to quit)");
+        String value = input.nextLine();
+        if(value.toUpperCase().equals("Q")) {
+            System.exit(0);
+        }
+        return value;
+    }
+
     public static void main(String[] args) {
+
+
         while(true) {
 
+            String from = requestInput("enter a unit to convert from");
+            String to = requestInput("enter a unit to convert to");
+            double value = Double.parseDouble(
+                    requestInput("enter a value to convert"));
+            String caseStr = from + to;
+            double result;
+
+            switch (caseStr){
+                case "FC":
+                    result = convertF2C(value);
+                    System.out.println(result);
+                    break;
+                case "FK":
+                    result = convertF2K(value);
+                    System.out.println(value);
+                    break;
+                case "CF":
+                    result = convertC2F(value);
+                    System.out.println(value);
+                    break;
+                case "CK":
+                    result = convertC2K(value);
+                    System.out.println(value);
+                    break;
+                case "KF":
+                    result = convertK2F(value);
+                    System.out.println(value);
+                    break;
+                case "KC":
+                    result = convertK2C(value);
+                    System.out.println(value);
+                    break;
+                default:
+                    System.out.println("no match");
+
+            }
+
         }
+
     }
 }
