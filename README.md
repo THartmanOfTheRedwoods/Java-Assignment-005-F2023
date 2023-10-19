@@ -6,17 +6,17 @@ As a new Java developer, you will be required to familiarize yourself with exist
     * Method names
     * Variables
 * Using Java terminology, break down every piece of the method **convertF2K**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * What is the access modifier? public is the access modifier.
+    * Is it a class or object method, how do you know? they are class methods and you know because they are defined as static
+    * What is its return type? String 
+    * What parameters does it require, and what are the parameter(s) datatype(s)? double celsius, string unit, string, void. 
+    * Describe for me how the body of the method executes (i.e. its flow of execution). It is executing temperature conversions and asks for the temp percentage to convert and the unit
 * Using Java terminology, break down method **getUnitChoice**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * What is the access modifier? getUnitChoice
+    * Is it a class or object method, how do you know? it is a class method because it is static
+    * What is its return type? String
+    * What parameters does it require, and what are the parameter(s) datatype(s)? it doesn't have any parameters
+    * Describe for me how the body of the method executes (i.e. its flow of execution). It prompts the user for a choice and then the user enters a choice and the input is printed.
     * How do the format specifiers differ than what you've seen before and what do they do?
 
 ## Part 2: - Implement Missing Method: convertK2F
