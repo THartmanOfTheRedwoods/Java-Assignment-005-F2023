@@ -126,6 +126,7 @@ public class TempConversion {
 
                case "Q":
 
+
                    System.exit(0);
                    break;
 
