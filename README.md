@@ -41,3 +41,21 @@ Part 4, as usual, is repetition of duties you will be doing in industry.
 * Commit and Push your running code back to your GitHub account
 * Issue a Pull request back to my Java-Assignment-005 repo
 * Cut and Paste the Pull request URL into your Canvas assignment to turn it in.
+
+## Part 1: Answers
+* 1st Part
+  * Method Names: covertC2F, convertC2K, covertF2C, covertF2K, convertF2C, getTemp, getUnitChoice
+  * Variables: Strings, Doubles
+* 2nd Part
+  * Access Modifier = Public, Static
+  * Class is Temp Conversion Because it is Static, inside the class and is not an object instance or constructor
+  * Return Type: Double because stated in parameters and asks to return methods that are doubles
+  * Parameters: Double, Fahrenheit
+  * Flow of execution: Uses the F2C method to covert the F temperature to celsius then that temperature is then used as an argument in the C2K method and returns the result which is the temp in kelvins
+* 3rd Part
+  * Access Modifier: Public, Static
+  * Class is TempConversion Because this is static and inside its brackets
+  * Return Type: String
+  * No parameters
+  * Execution: prints unit choices then reads the users choice as a string using input.nextLine() then returns that string to the console
+  * What's different is they have -4 which makes it left-justified and contains it to a maximum width of 4 characters

@@ -23,6 +23,8 @@ public class TempConversion {
         return kelvin - 273.15;
     }
 
+    public static double convertK2F(double kelvin) { return (kelvin - 273.15) * 1.8 + 32; }
+
     public static double getTemp(String unit) {
         System.out.printf("%-40s : ", String.format("Please enter °%s temperature to convert", unit));
         return Double.parseDouble(input.nextLine());
@@ -38,7 +40,47 @@ public class TempConversion {
 
     public static void main(String[] args) {
         while(true) {
+            System.out.println("Unit Converting from: ");
+            String unFrom = getUnitChoice();
 
+            if(unFrom.equalsIgnoreCase("Q")) {
+                System.out.println("Quitting Program...");
+                break;
+            }
+
+            System.out.println("Unit Converting To: ");
+            String unTo = getUnitChoice();
+
+            if (unTo.equalsIgnoreCase("Q")) {
+                System.out.println("Quitting Program...");
+                break;
+            }
+
+            double tempV = getTemp(unFrom);
+
+            double result = 0.0;
+
+            result = switch (unFrom) {
+                case "C" -> switch (unTo) {
+                    case "F" -> convertC2F(tempV);
+                    case "K" -> convertC2K(tempV);
+                    default -> result;
+                };
+                case "F" -> switch (unTo) {
+                    case "C" -> convertF2C(tempV);
+                    case "K" -> convertF2K(tempV);
+                    default -> result;
+                };
+                case "K" -> switch (unTo) {
+                    case "C" -> convertK2C(tempV);
+                    case "F" -> convertK2F(tempV);
+                    default -> result;
+                };
+                default -> 0.0;
+            };
+
+            System.out.printf("Result %.6f%s is %.6f%s%n", tempV, unFrom, result, unTo);
+            break;
         }
     }
 }
