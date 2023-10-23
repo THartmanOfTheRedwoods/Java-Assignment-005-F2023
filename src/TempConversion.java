@@ -56,47 +56,31 @@ public class TempConversion {
                 break;
             }
 
-            System.out.println("Temperature Value: ");
             double tempV = getTemp(unFrom);
 
-            double result;
-            switch (unFrom.toUpperCase()) {
-                case "C":
-                    switch (unTo.toUpperCase()) {
-                        case "F":
-                            result = convertC2F(tempV);
-                            System.out.printf("Result %.6f°C is %.6f°F%n", tempV, result);
-                            break;
-                        case "K":
-                            result = convertC2K(tempV);
-                            System.out.printf("Result %.6f°C is %.6f°K%n", tempV, result);
-                            break;
-                    }
-                    break;
-                case "F":
-                    switch (unTo.toUpperCase()) {
-                        case "C":
-                            result = convertF2C(tempV);
-                            System.out.printf("Result %.6f°F is %.6f°C%n", tempV, result);
-                            break;
-                        case "K":
-                            result = convertF2K(tempV);
-                            System.out.printf("Result %.6f°F is %.6f°K%n", tempV, result);
-                            break;
-                    }
-                    break;
-                case "K":
-                    switch (unTo.toUpperCase()) {
-                        case "C":
-                            result = convertK2C(tempV);
-                            System.out.printf("Result %.6f°K is %.6f°C%n", tempV, result);
-                            break;
-                        case "F":
-                            result = convertK2F(tempV);
-                            System.out.printf("Result %.6f°K is %.6f°F%n", tempV, result);
-                            break;
-                    }
-                    break;
+            double result = 0.0;
+
+            result = switch (unFrom) {
+                case "C" -> switch (unTo) {
+                    case "F" -> convertC2F(tempV);
+                    case "K" -> convertC2K(tempV);
+                    default -> result;
+                };
+                case "F" -> switch (unTo) {
+                    case "C" -> convertF2C(tempV);
+                    case "K" -> convertF2K(tempV);
+                    default -> result;
+                };
+                case "K" -> switch (unTo) {
+                    case "C" -> convertK2C(tempV);
+                    case "F" -> convertK2F(tempV);
+                    default -> result;
+                };
+                default -> 0.0;
+            };
+
+            System.out.printf("Result %.6f%s is %.6f%s%n", tempV, unFrom, result, unTo);
+            break;
         }
     }
 }
