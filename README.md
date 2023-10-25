@@ -5,12 +5,18 @@ As a new Java developer, you will be required to familiarize yourself with exist
 * Scan through all the existing code and note what you have to work with.
     * Method names
     * Variables
+- There is a scanner object at the class scope named input
+- There are a few variables that coincide with conversion methods.
+  - Celsius, fahrenheit, kelvin
+- The methods convert Celsius to Fahr, Celsius to Kelvin, Fahr to Celsius, Fahr to Kelvin, and Kelvin to Celsius,
 * Using Java terminology, break down every piece of the method **convertF2K**.
     * What is the access modifier?
     * Is it a class or object method, how do you know?
     * What is its return type?
     * What parameters does it require, and what are the parameter(s) datatype(s)?
     * Describe for me how the body of the method executes (i.e. its flow of execution).
+* convertF2K is a publicly accessible, static context/class method which returns a double, and requires a fahrenheit temperature formatted as a double.
+  * It first passes the fahrenheit input through the Fahr to Celsius conversion, and then passes the result into a Celsius to Kelvin method, which reduces code redundancy.
 * Using Java terminology, break down method **getUnitChoice**.
     * What is the access modifier?
     * Is it a class or object method, how do you know?
@@ -18,7 +24,9 @@ As a new Java developer, you will be required to familiarize yourself with exist
     * What parameters does it require, and what are the parameter(s) datatype(s)?
     * Describe for me how the body of the method executes (i.e. its flow of execution).
     * How do the format specifiers differ than what you've seen before and what do they do?
-
+* getUnitChoice is a public, class method which requires no parameters and returns a String.
+* I'm having a hard time finding documentation about the negative modifier in %-4s, but I would assume the "-" appends the spacing to the inverse position, or after the input.
+* It creates a neatly formatted table of options, however I don't quite understand why "To quit" is right-justified, when it has the same spacing as the previous options but fewer characters to populate the line.
 ## Part 2: - Implement Missing Method: convertK2F
 This Part is aimed at teaching you to use methods and code you have to add new functionality to existing code. In this case you will add the missing conversion method, but you don't need to know math :-)
 * Hint: You can use existing methods!
