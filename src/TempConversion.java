@@ -18,6 +18,9 @@ public class TempConversion {
     public static double convertF2K(double fahrenheit) {
         return convertC2K(convertF2C(fahrenheit));
     }
+    public static double convertK2F(double kelvin) {
+        return convertC2F(kelvin - 273.15);
+    }
 
     public static double convertK2C(double kelvin) {
         return kelvin - 273.15;
@@ -37,7 +40,26 @@ public class TempConversion {
     }
 
     public static void main(String[] args) {
+        System.out.println("Input a celsius ");
+   double C = input.nextDouble();
+        System.out.println("Input a kelvin ");
+   double K = input.nextDouble();
+        System.out.println("Input a fahrenheit ");
+   double F = input.nextDouble();
+
         while(true) {
+System.out.println("Celsius to fahrenheit " + convertC2F(C));
+System.out.println("Celsius to kelvin " +convertC2K(C));
+System.out.println("fahrenheit to Celsius " +convertF2C(F));
+System.out.println("fahrenheit to kelvin " +convertF2K(F));
+System.out.println("kelvin to fahrenheit " +convertK2F(K));
+System.out.println("kelvin to Celsius " +convertK2C(K));
+
+        System.out.println("Enter q to exit");
+        String command = input.nextLine();
+        if(command.toLowerCase().equals("q")){
+            break;
+        }
 
         }
     }

@@ -6,17 +6,17 @@ As a new Java developer, you will be required to familiarize yourself with exist
     * Method names
     * Variables
 * Using Java terminology, break down every piece of the method **convertF2K**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * What is the access modifier? is public.
+    * Is it a class or object method, how do you know? It is a class because it uses previous methods within the class. 
+    * What is its return type? it returns double.
+    * What parameters does it require, and what are the parameter(s) datatype(s)? It requires a double and it has farhient degrees. 
+    * Describe for me how the body of the method executes (i.e. its flow of execution). it returns to the consol the converson of celsuis to farhient.
 * Using Java terminology, break down method **getUnitChoice**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * What is the access modifier? public.
+    * Is it a class or object method, how do you know? Object because it does not call anything from the class. 
+    * What is its return type? String. 
+    * What parameters does it require, and what are the parameter(s) datatype(s)? String. 
+    * Describe for me how the body of the method executes (i.e. its flow of execution). It prints out four lines of code for the user to understand what they need to input into the consol.
     * How do the format specifiers differ than what you've seen before and what do they do?
 
 ## Part 2: - Implement Missing Method: convertK2F
