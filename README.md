@@ -6,18 +6,32 @@ As a new Java developer, you will be required to familiarize yourself with exist
     * Method names
     * Variables
 * Using Java terminology, break down every piece of the method **convertF2K**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
-    * What is its return type?
-    * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
+    * What is the access modifier?<br>
+        **public**
+    * Is it a class or object method, how do you know?<br>
+        **class, because it is static**
+    * What is its return type?<br>
+        **double**
+    * What parameters does it require, and what are the parameter(s) datatype(s)?<br>
+        **double fahrenheit**
+      * Describe for me how the body of the method executes (i.e. its flow of execution).<br>
+          **convertF2C calls a double fahrenheit and converts it to celsius**<br>
+          **which is then called by convertC2k and converts celsius to kelvins**<br>
+          **the result is fahrenheit to kelvins without having to create a method that includes the math for it**<br>
 * Using Java terminology, break down method **getUnitChoice**.
-    * What is the access modifier?
-    * Is it a class or object method, how do you know?
+    * What is the access modifier? <br>
+        **public**
+    * Is it a class or object method, how do you know?<br>
+        **class, because it is static**
     * What is its return type?
+        **String**
     * What parameters does it require, and what are the parameter(s) datatype(s)?
-    * Describe for me how the body of the method executes (i.e. its flow of execution).
-    * How do the format specifiers differ than what you've seen before and what do they do?
+        **There are no parameters**
+    * Describe for me how the body of the method executes (i.e. its flow of execution).<br>
+        **It prints 4 strings and then returns user input**
+    * How do the format specifiers differ than what you've seen before and what do they do?<br>
+        **they include -4 and 40 with a string. We have seen .3 with %f which only returns 3 decimal places**
+        **not 100% on what happens with the subtraction symbol but both are related to justification of the text printed in the String**
 
 ## Part 2: - Implement Missing Method: convertK2F
 This Part is aimed at teaching you to use methods and code you have to add new functionality to existing code. In this case you will add the missing conversion method, but you don't need to know math :-)
