@@ -38,7 +38,27 @@ public class TempConversion {
 
     public static void main(String[] args) {
         while(true) {
+            String choice = getUnitChoice();
 
+            switch (choice.toUpperCase()) {
+                case "C":
+                    double celsius = getTemp("C");
+                    System.out.printf("%.2f°C is equal to %.2f°F and %.2fK%n", celsius, convertC2F(celsius), convertC2K(celsius));
+                    break;
+                case "F":
+                    double fahrenheit = getTemp("F");
+                    System.out.printf("%.2f°F is equal to %.2f°C and %.2fK%n", fahrenheit, convertF2C(fahrenheit), convertF2K(fahrenheit));
+                    break;
+                case "K":
+                    double kelvin = getTemp("K");
+                    System.out.printf("%.2fK is equal to %.2f°C and %.2f°F%n", kelvin, convertK2C(kelvin), convertC2F(convertK2C(kelvin)));
+                    break;
+                case "Q":
+                    System.out.println("Exiting the program. Goodbye!");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
         }
+    }
     }
 }
